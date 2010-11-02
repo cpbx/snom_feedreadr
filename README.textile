@@ -1,0 +1,45 @@
+h1. feedreadr
+
+
+<pre>
+
+.____ ___  ___   _   __  __  _     _  __
+_/_  /_/ `/_/ __/   /_/ /_/` _\  _/  /_/
+/   /____/___/._\  /  \/__ /___\/._\/  \__^
+
+</pre>
+
+
+feedreadr is a simple Feedreader for the Snom Mini XML Browser
+
+
+Copyright (C) 2010  Patrick C. Engel <engel@cpbx.eu>, License GNU GPL v3
+
+********************************************************************
+
+h2. INSTALLATION
+
+
+# configure config/feedreadr.cfg
+
+# move the src folder to the Document Root of your Webserver, 
+  eg. /var/www/feedreader/
+
+# Point your Mini-XML-Browser to http://WEB_SERVER/feedreadr/index.php
+
+
+
+
+h2. EXAMPLES
+
+# Configfile `feedreadr.cfg'
+
+<pre>
+[general]
+appname=FeedReadr
+item_max=4
+
+[feeds]
+0 = http://blog.snom.com/feed/atom/
+;1 = <URL> ; multiple feeds
+</pre>
