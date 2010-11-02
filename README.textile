@@ -1,4 +1,4 @@
-h1. snom xml minibrowser feedreadr
+h1. snom xml minibrowser feedreader
 
 
 <pre>
@@ -21,6 +21,7 @@ h2. INSTALLATION
 
 
 # configure config/feedreadr.cfg
+# requires PHP version 5
 # move the src folder to the Document Root of your Webserver, 
   eg. /var/www/feedreader/
 # Point your Mini-XML-Browser to http://WEB_SERVER/feedreadr/index.php
