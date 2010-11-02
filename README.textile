@@ -1,4 +1,4 @@
-h1. feedreadr
+h1. snom xml minibrowser feedreadr
 
 
 <pre>
@@ -10,7 +10,7 @@ _/_  /_/ `/_/ __/   /_/ /_/` _\  _/  /_/
 </pre>
 
 
-feedreadr is a simple Feedreader for the Snom Mini XML Browser
+_feedreadr_ is a simple Feedreader for the Snom Mini XML Browser
 
 
 Copyright (C) 2010  Patrick C. Engel <engel@cpbx.eu>, License GNU GPL v3
@@ -21,10 +21,8 @@ h2. INSTALLATION
 
 
 # configure config/feedreadr.cfg
-
 # move the src folder to the Document Root of your Webserver, 
   eg. /var/www/feedreader/
-
 # Point your Mini-XML-Browser to http://WEB_SERVER/feedreadr/index.php
 
 
@@ -32,7 +30,7 @@ h2. INSTALLATION
 
 h2. EXAMPLES
 
-# Configfile `feedreadr.cfg'
+* Configfile `feedreadr.cfg'
 
 <pre>
 [general]
