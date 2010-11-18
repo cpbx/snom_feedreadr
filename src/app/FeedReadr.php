@@ -91,10 +91,12 @@ class FeedReadr
 		printf ('<Title>%s</Title>', 
 				$this->config->get("general","appname"));
 		foreach ($feeds as $id => $feed) {
-			$title = strip_tags($feed['title']);
+			$title = $this->xml_sanitize_content($feed['title']); 
+			
 			$title = html_entity_decode($title, 
 						ENT_COMPAT, strtoupper($this->encoding)
 					);
+			
 			printf ("<MenuItem><Name>%s</Name>"
 					."<URL>http://%s?cmd=read&id=%d</URL></MenuItem>", 
 					$title, 
@@ -112,10 +114,31 @@ class FeedReadr
 			);
 			exit;
 		}
-		$content = str_replace('<br>', '<br/>', $text['content']);
-		$content = strip_tags($content, '<br/>');
-		$this->xml_text($content.'<br/>'.$text['date'], $text['title']);
+		$content = $this->xml_sanitize_content($text['content']);
+		$this->xml_text($content.'<br/>'.$text['date'], 
+						$this->xml_sanitize_content($text['title'])
+		);
 	}
+	
+	protected function xml_sanitize($str) 
+	{
+		$search = array('"', '&#8220;', '&#8221;', "\n");
+		$replace = array('\'', '\'', '\'', ' ');
+		
+		return str_replace(
+			$search,
+			$replace,
+			$str
+		);
+	}
+		
+	protected function xml_sanitize_content($str) 
+	{
+		$str = str_replace('<br>', '<br/>', $str);
+		$str = strip_tags($str, '<br/>');
+		return $this->xml_sanitize($str);
+	}
+	
 
 	protected function get_feed_by_id($id)
 	{
