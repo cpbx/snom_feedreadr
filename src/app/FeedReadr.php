@@ -110,7 +110,7 @@ class FeedReadr
 		$text = $this->get_feed_by_id($id);
 		if (empty($text)) {
 			$this->xml_error(sprintf(
-						"the feed id `%d' returned no content.", $id)
+						"the feed id: %d returned no content.", $id)
 			);
 			exit;
 		}
@@ -254,7 +254,7 @@ class FeedReadr
 		try {
 			$this->feeds = $this->config->getSection('feeds');
 		} catch (UnexpectedValueException $e) {
-			$this->xml_error('section not found: feeds');
+			$this->xml_error('[config] section not found: feeds');
 		}
 		if (!isset($this->encoding)) {
 			$this->encoding = 'UTF-8';
