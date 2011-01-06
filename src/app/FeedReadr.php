@@ -67,7 +67,7 @@ class FeedReadr
 					ENT_COMPAT, 
 					strtoupper($this->encoding)
 				 );
-		printf("<SnomIPPhoneText><Title>%s</Title><Text>%s</Text>"
+		printf("<SnomIPPhoneText scrollable=\"on\"><Title>%s</Title><Text>%s</Text>"
 				."</SnomIPPhoneText>\n", $title, 
 				html_entity_decode($text, ENT_COMPAT, 
 				strtoupper($this->encoding))
